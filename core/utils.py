@@ -9,7 +9,7 @@ def generate_filename(filename, value):
     return f'{slugify(str(value).lower())}.{ext}'
 
 def avatar_upload(instance, filename):
-    return f'avatars/{generate_filename(filename, instance.user.username)}'
+    return f'avatars/{generate_filename(filename, instance.username)}'
 
 # def book_cover_upload(instance, filename):
 #     return f'book_covers/{generate_filename(filename, instance.title)}'
