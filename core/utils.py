@@ -11,13 +11,13 @@ def generate_filename(filename, value):
 def avatar_upload(instance, filename):
     return f'avatars/{generate_filename(filename, instance.username)}'
 
-# def book_cover_upload(instance, filename):
-#     return f'book_covers/{generate_filename(filename, instance.title)}'
+def book_cover_upload(instance, filename):
+    return f'book_covers/{generate_filename(filename, instance.title)}'
 
-# def pdf_upload(instance, filename):
-#     return f'pdfs/{generate_filename(filename, instance.title)}'
+def pdf_upload(instance, filename):
+    return f'pdfs/{generate_filename(filename, instance.title)}'
 
-# def validate_published_year(value):
-#     current_year = datetime.now().year
-#     if value and value not in range(1800, current_year):
-#         raise ValidationError(f'Invalid Year! Year must be between {current_year} and 1800.')
+def validate_published_year(value):
+    current_year = datetime.now().year
+    if value and value not in range(1800, current_year):
+        raise ValidationError(f'Invalid Year! Year must be between {current_year} and 1800.')
