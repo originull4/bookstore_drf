@@ -14,7 +14,7 @@ class AuthorViewSet(ModelViewSet):
     lookup_field = 'slug'
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [filters.SearchFilter]
-    search_fields = ['name',]
+    search_fields = ['name', ]
 
 
 class GenreViewSet(ModelViewSet):
@@ -23,7 +23,7 @@ class GenreViewSet(ModelViewSet):
     lookup_field = 'slug'
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [filters.SearchFilter]
-    search_fields = ['title',]
+    search_fields = ['title', ]
 
 
 class BookViewSet(ModelViewSet):
@@ -32,8 +32,7 @@ class BookViewSet(ModelViewSet):
     lookup_field = 'slug'
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [filters.SearchFilter]
-    search_fields = ['title',]
-
+    search_fields = ['title', ]
 
     @action(detail=False)
     def author_books(self, request, slug):

@@ -6,7 +6,6 @@ from rest_framework.test import APITestCase
 
 from .models import Account
 
-
 superuser_data = {'username': 'adminuser', 'password': 'adminuserpass'}
 staffuser1_data = {'username': 'staff1', 'password': 'staff1pass'}
 staffuser2_data = {'username': 'staff2', 'password': 'staff2pass'}
@@ -20,7 +19,6 @@ account_password_change_url = reverse('account-change-password', kwargs={'id': 1
 
 
 class APITestCaseWithSetUp(APITestCase):
-    
     """
     setUp for Account Related Tests
     Create 3 Account, 1 Superuser and 2 Staffuser
@@ -41,7 +39,7 @@ class AccountCreateTestCase(APITestCase):
 
     def test_account_create(self):
         response = self.client.post(account_create_url, superuser_data)
-        user_date =json.loads(response.content)
+        user_date = json.loads(response.content)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertEqual(user_date['username'], superuser_data['username'])
 
